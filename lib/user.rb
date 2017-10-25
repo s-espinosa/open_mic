@@ -16,4 +16,9 @@ class User
   def tell(name, joke)
     name.learn(joke)
   end
+
+  def perform_routine_for(name)
+    routine = name.jokes << @jokes
+    routine.flatten!
+  end
 end
