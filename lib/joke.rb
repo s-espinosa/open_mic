@@ -1,3 +1,5 @@
+require "csv"
+
 class Joke
   attr_reader :id,
               :question,
@@ -12,7 +14,7 @@ class Joke
     @joke_bank = []
   end
 
-  def load_jokes(filename = "jokes.csv")
+  def load_jokes(filename = "./data/jokes.csv")
     contents = CSV.open filename, headers: true, header_converters: :symbol
     contents.each do |row|
       joke = Joke.new(row)

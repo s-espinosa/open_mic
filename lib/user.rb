@@ -1,3 +1,5 @@
+require "./lib/joke"
+
 class User
   attr_reader :name,
               :jokes
@@ -10,4 +12,9 @@ class User
   def learn(joke)
     @jokes << joke
   end
+
+  # def tell(name, joke)
+  #   require "pry"; binding.pry
+  #   name.learn(joke)
+  # end
 end

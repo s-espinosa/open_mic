@@ -39,8 +39,12 @@ class UserTest < Minitest::Test
   end
 
   def test_user_can_tell_jokes
+    skip
     sal = User.new("Sal")
     ali = User.new("Ali")
 
+    sal.tell(ali, joke)
+
+    assert_equal 1, ali.jokes.count
   end
 end
