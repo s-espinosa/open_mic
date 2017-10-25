@@ -1,3 +1,4 @@
+require "csv"
 require "./lib/joke"
 
 class User
@@ -20,5 +21,13 @@ class User
   def perform_routine_for(name)
     routine = name.jokes << @jokes
     routine.flatten!
+  end
+
+  def learn_routine(routine)
+    contents = CSV.open routine, headers: true, header_converters: :symbol
+    contents.each do |row|
+      joke = Joke.new(row)
+      @jokes << joke
+    end
   end
 end
