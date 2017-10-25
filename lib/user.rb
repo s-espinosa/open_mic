@@ -13,8 +13,7 @@ class User
     @jokes << joke
   end
 
-  # def tell(name, joke)
-  #   require "pry"; binding.pry
-  #   name.learn(joke)
-  # end
+  def tell(name, joke)
+    name.learn(joke)
+  end
 end
